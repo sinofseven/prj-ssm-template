@@ -1,0 +1,12 @@
+- hosts: localhost
+  tasks:
+    - name: create_key
+      aws_kms:
+        mode: grant
+        alias: xxxx
+    - name: xxxx
+      aws_ssm_parameter_store:
+        name: xxxx
+        string_type: SecureString
+        key_id: alias/xxxx
+        value: xxxx
